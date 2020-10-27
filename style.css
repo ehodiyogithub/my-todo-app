@@ -1,6 +1,7 @@
 .main-header{
     font-size: 70px;
     margin-bottom: 70px;
+    text-align: center;
 }
 
 *{
@@ -11,7 +12,6 @@
 .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 70vw;
 }
 
@@ -22,7 +22,7 @@
 .empty-state{
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     display: none;
 }
 
@@ -40,7 +40,11 @@ input[type="text"]{
 }
 .todo-list{
     list-style: none;
-    margin: 20px;
+    margin-bottom: 20px;
+   /** width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;**/
 }
 
 .todo-item{
@@ -54,7 +58,6 @@ input[type="text"]{
 .todo-item span{
     flex-grow: 1;
     margin-left: 10px;
-    margin-right: 10px;
     font-size: 22px;
 }
 
@@ -78,13 +81,14 @@ cursor: pointer;
 }
 
 .tick::before{
-    content: "*";/* tick replace with asteric*/
+    content:"✔";
     font-size: 20px;
     display: none;
 }
 
 .done.tick::before{
     display: inline;
+    content:"✔";
 }
 
 .delete-todo{
@@ -100,4 +104,12 @@ cursor: pointer;
     width: 30px;
     height: 30px;
     pointer-events: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.todo-list:empty + .empty-state{
+    display: flex;
 }
